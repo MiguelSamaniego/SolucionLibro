@@ -18,8 +18,8 @@ public class LibroDigital extends Libro<LibroDigital>{
     public LibroDigital(int codigo, String titulo, String autor, String edicion, double precio) {
         super(codigo, titulo, autor, edicion, precio);
     }
-   
 
+ 
     
     
     
