@@ -40,11 +40,27 @@ public class ControladorCliente {
     
     public void modificar(Cliente c, Cliente cNuevo){
         Cliente c1= buscar(c.getCodigo());
-        listaClientes.set(c.getCodigo(), cNuevo);
-        
+        int posicion=0;
+        for (Cliente listaCliente : listaClientes) {
+            if(listaCliente.getCodigo()==c1.getCodigo()){
+                //posicion=posicion+1;
+                break;
+            }
+            posicion=posicion+1;
+        }
+        listaClientes.set(posicion, cNuevo);
         
     }
 
+    public void recargarCredito(Cliente cliente, double credito){
+        var c = new Cliente(cliente.getCodigo(), cliente.getCedula(), cliente.getNombresCompletos(), cliente.getCredito()+credito);
+        modificar(cliente, c);
+    }
+    
+    public void dismiuiCredito(Cliente cliente, double credito){
+         var c = new Cliente(cliente.getCodigo(), cliente.getCedula(), cliente.getNombresCompletos(), cliente.getCredito()-credito);
+        modificar(cliente, c);
+    }
     public List<Cliente> getListaClientes() {
         return listaClientes;
     }

@@ -43,8 +43,16 @@ public class ControladorLibroDigital {
     }
     
     public void modificar(LibroDigital c, LibroDigital cNuevo){
-        LibroDigital c1= buscar(c.getCodigo());
-        listaLibrosDigitales.set(c.getCodigo(), cNuevo);
+      LibroDigital c1= buscar(c.getCodigo());
+        int posicion=0;
+        for (LibroDigital listaCliente : listaLibrosDigitales) {
+            if(listaCliente.getCodigo()==c1.getCodigo()){
+                //posicion=posicion+1;
+                break;
+            }
+            posicion=posicion+1;
+        }
+        listaLibrosDigitales.set(posicion, cNuevo);
         
         
     }

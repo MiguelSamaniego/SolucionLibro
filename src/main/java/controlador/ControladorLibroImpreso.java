@@ -45,19 +45,32 @@ public class ControladorLibroImpreso {
     }
     
     public void modificar(LibroImpreso c, LibroImpreso cNuevo){
-        LibroImpreso c1= buscar(c.getCodigo());
-        listaLibrosImpresos.set(c.getCodigo(), cNuevo);
+         
+      LibroImpreso c1= buscar(c.getCodigo());
+        int posicion=0;
+        for (LibroImpreso listaCliente : listaLibrosImpresos) {
+            if(listaCliente.getCodigo()==c1.getCodigo()){
+                //posicion=posicion+1;
+                break;
+            }
+            posicion=posicion+1;
+        }
+        listaLibrosImpresos.set(posicion, cNuevo);
         
         
     }
 
-    public List<LibroImpreso> getListaLibrosDigitales() {
+    public List<LibroImpreso> getListaLibrosImpresos() {
         return listaLibrosImpresos;
     }
 
-    public void setListaLibrosDigitales(List<LibroImpreso> listaLibrosDigitales) {
-        this.listaLibrosImpresos = listaLibrosDigitales;
+    public void setListaLibrosImpresos(List<LibroImpreso> listaLibrosImpresos) {
+        this.listaLibrosImpresos = listaLibrosImpresos;
     }
+        
+    
+
+    
 
     
 

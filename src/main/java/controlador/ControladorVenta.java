@@ -46,14 +46,22 @@ public class ControladorVenta {
     }
     
     public void modificar(Venta c, Venta cNuevo){
-        Venta c1= buscar(c.getCodigo());
-        listaLibrosImpresos.set(c.getCodigo(), cNuevo);
+         Venta c1= buscar(c.getCodigo());
+        int posicion=0;
+        for (Venta listaCliente : listaLibrosImpresos) {
+            if(listaCliente.getCodigo()==c1.getCodigo()){
+                //posicion=posicion+1;
+                break;
+            }
+            posicion=posicion+1;
+        }
+        listaLibrosImpresos.set(posicion, cNuevo);
         
         
     }
     
     public String IntentarVenta(int codigo,Cliente cliente,Libro libro,double precio,  double precioFinal){
-        if (cliente.getCredito()< libro.precioComision()){
+        if (cliente.getCredito()< libro.obtenerPrecio()){
             return "El cliente no tiene suficiente credito" ;
         }else{
             var venta = new Venta(codigo, cliente, libro, precio, precioFinal);
