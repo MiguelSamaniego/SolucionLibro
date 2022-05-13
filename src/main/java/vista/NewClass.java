@@ -59,13 +59,13 @@ public class NewClass {
                 var LibroDigital = new LibroDigital(id, titulo, autor, edicion, precio);
 
                 System.out.println(controladorVenta.IntentarVenta(0, cliente, LibroDigital, LibroDigital.getPrecio(), LibroDigital.obtenerPrecio()));
-                cliente.setCredito(cliente.getCredito() - LibroDigital.precioComision());
+                cliente.setCredito(cliente.getCredito() - LibroDigital.obtenerPrecio());
                 break;
             case 2:
                 var libroImpreso = new LibroImpreso(id, titulo, autor, edicion, precio);
 
                 System.out.println(controladorVenta.IntentarVenta(0, cliente, libroImpreso, libroImpreso.getPrecio(), libroImpreso.obtenerPrecio()));
-                cliente.setCredito(cliente.getCredito() - libroImpreso.precioComision());
+                cliente.setCredito(cliente.getCredito() - libroImpreso.obtenerPrecio());
                 break;
             default:
                 throw new AssertionError();
