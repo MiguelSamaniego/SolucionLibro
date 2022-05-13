@@ -53,7 +53,7 @@ public class ControladorVenta {
     }
     
     public String IntentarVenta(int codigo,Cliente cliente,Libro libro,double precio,  double precioFinal){
-        if (cliente.getCredito()< libro.precioFinla()){
+        if (cliente.getCredito()< libro.precioComision()){
             return "El cliente no tiene suficiente credito" ;
         }else{
             var venta = new Venta(codigo, cliente, libro, precio, precioFinal);

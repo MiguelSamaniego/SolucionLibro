@@ -20,7 +20,12 @@ public class LibroImpreso  extends Libro<LibroImpreso>{
     }
 
     @Override
-    public double precioFinla() {
-       return this.precio+(this.precio*0.02)+20;
+    public double precioComision() {
+       return this.precio*0.02;
+    }
+
+    @Override
+    public double precioCalculado() {
+       return this.precio+20;
     }
 }

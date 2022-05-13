@@ -27,9 +27,14 @@ public class LibroDigital extends Libro<LibroDigital>{
    
 
     @Override
-    public double precioFinla() {
+    public double precioComision() {
         double comision = 2.3;
         
-      return this.precio + comision;
+      return comision;
+    }
+
+    @Override
+    public double precioCalculado() {
+       return this.precio;
     }
 }

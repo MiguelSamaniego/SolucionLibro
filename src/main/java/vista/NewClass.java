@@ -35,12 +35,12 @@ public class NewClass {
       
         
         
-        System.out.println(controladorVenta.IntentarVenta(0, cliente, LibroDigital, LibroDigital.getPrecio(), LibroDigital.precioFinla()));
-        cliente.setCredito(cliente.getCredito()-LibroDigital.precioFinla());
+        System.out.println(controladorVenta.IntentarVenta(0, cliente, LibroDigital, LibroDigital.getPrecio(), LibroDigital.obtenerPrecio()));
+        cliente.setCredito(cliente.getCredito()-LibroDigital.precioComision());
         
-        System.out.println(controladorVenta.IntentarVenta(0, cliente, libroImpreso, libroImpreso.getPrecio(), libroImpreso.precioFinla()));
+        System.out.println(controladorVenta.IntentarVenta(0, cliente, libroImpreso, libroImpreso.getPrecio(), libroImpreso.obtenerPrecio()));
         
-        cliente.setCredito(cliente.getCredito()-libroImpreso.precioFinla());
+        cliente.setCredito(cliente.getCredito()-libroImpreso.precioComision());
         
         
 

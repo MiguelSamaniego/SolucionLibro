@@ -66,7 +66,15 @@ public abstract class Libro<L> {
         this.precio = precio;
     }
 
-    public abstract double precioFinla();
+    public abstract double precioComision();
+    
+    public abstract double precioCalculado();
+    
+    
+    public double obtenerPrecio(){
+    
+        return precioComision()+precioCalculado();
+} 
     @Override
     public String toString() {
         return "Libro{" + "codigo=" + codigo + ", titulo=" + titulo + ", autor=" + autor + ", edicion=" + edicion + ", precio=" + precio + '}';
